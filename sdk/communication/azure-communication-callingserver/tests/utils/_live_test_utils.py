@@ -62,6 +62,13 @@ class CallingServerLiveTestUtils:
         assert len(add_participant_result.participant_id) != 0
 
     @staticmethod
+    def validate_join_call(_result):
+        # type: (AddParticipantResult) -> None
+        assert _result is not None
+        assert _result.call_connection_id is not None
+        assert len(_result.call_connection_id) != 0
+
+    @staticmethod
     def cancel_all_media_operations_for_group_call(call_connections):
         # type: (List[CallConnection]) -> None
         if call_connections is None:
