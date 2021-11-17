@@ -13,36 +13,36 @@ interactions:
       Content-Type:
       - application/json
       User-Agent:
-      - azsdk-python-communication-identity/1.0.1 Python/3.8.2 (macOS-11.6-x86_64-i386-64bit)
+      - azsdk-python-communication-identity/1.0.1 Python/3.10.0 (Windows-10-10.0.22000-SP0)
       x-ms-date:
-      - Tue, 12 Oct 2021 18:34:25 GMT
+      - Wed, 17 Nov 2021 18:24:07 GMT
       x-ms-return-client-request-id:
       - 'true'
     method: POST
     uri: https://sanitized.communication.azure.com/identities?api-version=2021-03-07
   response:
     body:
-      string: '{"identity":{"id":"8:acs:fe385110-ae15-4739-bacb-fad6267a9304_0000000d-15aa-724d-da63-c93a0d00bf25"}}'
+      string: '{"identity":{"id":"8:acs:ab12b0ea-85ea-4f83-b0b6-84d90209c7c4_0000000d-cf05-f337-28c5-593a0d009377"}}'
     headers:
       api-supported-versions:
       - 2020-07-20-preview2, 2021-02-22-preview1, 2021-03-07, 2021-03-31-preview1,
-        2021-10-31-preview
+        2021-10-31-preview, 2021-11-01
+      content-length:
+      - '101'
       content-type:
       - application/json; charset=utf-8
       date:
-      - Tue, 12 Oct 2021 18:34:26 GMT
+      - Wed, 17 Nov 2021 18:24:07 GMT
       ms-cv:
-      - e920lwOchkuZLlZrmH0VKw.2.0
+      - /Eb29Z1kFk2Pr2gTw1KE5w.2.0
       request-context:
       - appId=
       strict-transport-security:
       - max-age=2592000
-      transfer-encoding:
-      - chunked
       x-cache:
       - CONFIG_NOCACHE
       x-processing-time:
-      - 26ms
+      - 24ms
     status:
       code: 201
       message: Created
@@ -60,32 +60,32 @@ interactions:
       Content-Type:
       - application/json
       User-Agent:
-      - azsdk-python-communication-identity/1.0.1 Python/3.8.2 (macOS-11.6-x86_64-i386-64bit)
+      - azsdk-python-communication-identity/1.0.1 Python/3.10.0 (Windows-10-10.0.22000-SP0)
       x-ms-date:
-      - Tue, 12 Oct 2021 18:34:26 GMT
+      - Wed, 17 Nov 2021 18:24:08 GMT
       x-ms-return-client-request-id:
       - 'true'
     method: POST
     uri: https://sanitized.communication.azure.com/identities?api-version=2021-03-07
   response:
     body:
-      string: '{"identity":{"id":"8:acs:fe385110-ae15-4739-bacb-fad6267a9304_0000000d-15aa-7bde-a70b-57482200b92d"}}'
+      string: '{"identity":{"id":"8:acs:ab12b0ea-85ea-4f83-b0b6-84d90209c7c4_0000000d-cf05-f7bc-99c6-593a0d00abe0"}}'
     headers:
       api-supported-versions:
       - 2020-07-20-preview2, 2021-02-22-preview1, 2021-03-07, 2021-03-31-preview1,
-        2021-10-31-preview
+        2021-10-31-preview, 2021-11-01
+      content-length:
+      - '101'
       content-type:
       - application/json; charset=utf-8
       date:
-      - Tue, 12 Oct 2021 18:34:28 GMT
+      - Wed, 17 Nov 2021 18:24:09 GMT
       ms-cv:
-      - t9wNHFOJA0y/TCzuWHNlxw.2.0
+      - 5Vazq806IEmSJ/YzO2V3Ug.2.0
       request-context:
       - appId=
       strict-transport-security:
       - max-age=2592000
-      transfer-encoding:
-      - chunked
       x-cache:
       - CONFIG_NOCACHE
       x-processing-time:
@@ -94,7 +94,7 @@ interactions:
       code: 201
       message: Created
 - request:
-    body: '{"callLocator": {"groupCallId": "aHR0cHM6Ly9jb252LXVzd2UtMDkuY29udi5za3lwZS5jb20vY29udi9EZVF2WEJGVVlFV1NNZkFXYno2azN3P2k9MTEmZT02Mzc1NzIyMjk0Mjc0NTI4Nzk=",
+    body: '{"callLocator": {"groupCallId": "3c6b2a90-47bd-11ec-bf42-398e0045d172",
       "kind": "groupCallLocator"}, "recordingStateCallbackUri": "https://bot.contoso.io/callback"}'
     headers:
       Accept:
@@ -104,28 +104,30 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '248'
+      - '164'
       Content-Type:
       - application/json
       User-Agent:
-      - azsdk-python-communication-callingserver/1.0.0b1 Python/3.8.2 (macOS-11.6-x86_64-i386-64bit)
+      - azsdk-python-communication-callingserver/1.0.0b1 Python/3.10.0 (Windows-10-10.0.22000-SP0)
+      x-ms-host:
+      - acstelephonyportaltesting.communication.azure.com
     method: POST
     uri: https://sanitized.communication.azure.com/calling/recordings?api-version=2021-11-15-preview
   response:
     body:
-      string: '{"error": {"code": "8501", "message": "Action is invalid when call
-        is not in Established state"}}'
+      string: '{"error": {"code": "8559", "message": "Only one app of a single dialout
+        app is supported in a call."}}'
     headers:
       content-length:
-      - '93'
+      - '98'
       content-type:
       - application/json; charset=utf-8
       date:
-      - Tue, 12 Oct 2021 18:34:30 GMT
+      - Wed, 17 Nov 2021 18:24:15 GMT
       x-cache:
       - CONFIG_NOCACHE
       x-microsoft-skype-chain-id:
-      - 290a6756-a083-405a-9527-cc02683273a9
+      - 412f253b-f3f6-4e3e-a7b2-e14a6dca0b21
     status:
       code: 400
       message: Bad Request

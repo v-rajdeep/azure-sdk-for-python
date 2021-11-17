@@ -13,36 +13,36 @@ interactions:
       Content-Type:
       - application/json
       User-Agent:
-      - azsdk-python-communication-identity/1.0.1 Python/3.9.7 (Windows-10-10.0.19043-SP0)
+      - azsdk-python-communication-identity/1.0.1 Python/3.10.0 (Windows-10-10.0.22000-SP0)
       x-ms-date:
-      - Thu, 07 Oct 2021 18:28:04 GMT
+      - Wed, 17 Nov 2021 18:22:46 GMT
       x-ms-return-client-request-id:
       - 'true'
     method: POST
     uri: https://sanitized.communication.azure.com/identities?api-version=2021-03-07
   response:
     body:
-      string: '{"identity":{"id":"8:acs:016a7064-0581-40b9-be73-6dde64d69d72_0000000c-fbe4-cfe9-6479-224822000f3c"}}'
+      string: '{"identity":{"id":"8:acs:ab12b0ea-85ea-4f83-b0b6-84d90209c7c4_0000000d-cf04-b52c-ec8d-084822007dba"}}'
     headers:
       api-supported-versions:
       - 2020-07-20-preview2, 2021-02-22-preview1, 2021-03-07, 2021-03-31-preview1,
-        2021-10-31-preview
+        2021-10-31-preview, 2021-11-01
+      content-length:
+      - '101'
       content-type:
       - application/json; charset=utf-8
       date:
-      - Thu, 07 Oct 2021 18:28:03 GMT
+      - Wed, 17 Nov 2021 18:22:46 GMT
       ms-cv:
-      - q0Q0vpZzOkCwfbCWproy4Q.0
+      - dWMOVGv1MU2oIUXKDTacow.2.0
       request-context:
       - appId=
       strict-transport-security:
       - max-age=2592000
-      transfer-encoding:
-      - chunked
       x-cache:
       - CONFIG_NOCACHE
       x-processing-time:
-      - 111ms
+      - 43ms
     status:
       code: 201
       message: Created
@@ -60,71 +60,74 @@ interactions:
       Content-Type:
       - application/json
       User-Agent:
-      - azsdk-python-communication-identity/1.0.1 Python/3.9.7 (Windows-10-10.0.19043-SP0)
+      - azsdk-python-communication-identity/1.0.1 Python/3.10.0 (Windows-10-10.0.22000-SP0)
       x-ms-date:
-      - Thu, 07 Oct 2021 18:28:04 GMT
+      - Wed, 17 Nov 2021 18:22:47 GMT
       x-ms-return-client-request-id:
       - 'true'
     method: POST
     uri: https://sanitized.communication.azure.com/identities?api-version=2021-03-07
   response:
     body:
-      string: '{"identity":{"id":"8:acs:016a7064-0581-40b9-be73-6dde64d69d72_0000000c-fbe4-d140-557a-224822002243"}}'
+      string: '{"identity":{"id":"8:acs:ab12b0ea-85ea-4f83-b0b6-84d90209c7c4_0000000d-cf04-bb09-ec8d-084822007dbb"}}'
     headers:
       api-supported-versions:
       - 2020-07-20-preview2, 2021-02-22-preview1, 2021-03-07, 2021-03-31-preview1,
-        2021-10-31-preview
+        2021-10-31-preview, 2021-11-01
+      content-length:
+      - '101'
       content-type:
       - application/json; charset=utf-8
       date:
-      - Thu, 07 Oct 2021 18:28:04 GMT
+      - Wed, 17 Nov 2021 18:22:48 GMT
       ms-cv:
-      - 45kFcRfPVU2LixhLod551A.0
+      - 9kkzia1i1UenEdsCfi1CrQ.2.0
       request-context:
       - appId=
       strict-transport-security:
       - max-age=2592000
-      transfer-encoding:
-      - chunked
       x-cache:
       - CONFIG_NOCACHE
       x-processing-time:
-      - 98ms
+      - 22ms
     status:
       code: 201
       message: Created
 - request:
-    body: null
+    body: '{"callLocator": {"groupCallId": "d2bc2300-479f-11ec-a1e1-bd55c8631198",
+      "kind": "groupCallLocator"}}'
     headers:
       Accept:
-      - '*/*'
+      - application/json
       Accept-Encoding:
       - gzip, deflate
       Connection:
       - keep-alive
       Content-Length:
-      - '0'
-      UriToSignWith:
-      - https://acstestbot1.communication.azure.com/v1/objects/0-eus-d3-00000000000000000000000000000000
+      - '100'
+      Content-Type:
+      - application/json
       User-Agent:
-      - azsdk-python-communication-callingserver/1.0.0b1 Python/3.9.7 (Windows-10-10.0.19043-SP0)
+      - azsdk-python-communication-callingserver/1.0.0b1 Python/3.10.0 (Windows-10-10.0.22000-SP0)
       x-ms-host:
-      - acstestbot1.communication.azure.com
-    method: DELETE
-    uri: https://storage.asm.skype.com/v1/objects/0-eus-d3-00000000000000000000000000000000
+      - acstelephonyportaltesting.communication.azure.com
+    method: POST
+    uri: https://sanitized.communication.azure.com/calling/participants?api-version=2021-11-15-preview
   response:
     body:
-      string: ''
+      string: '{"error": {"code": "8523", "message": "One or more arguments are invalid."}}'
     headers:
       content-length:
-      - '0'
+      - '72'
+      content-type:
+      - application/json; charset=utf-8
       date:
-      - Thu, 07 Oct 2021 18:28:05 GMT
-      server:
-      - Microsoft-HTTPAPI/2.0
-      strict-transport-security:
-      - max-age=31536000; includeSubDomains
+      - Wed, 17 Nov 2021 18:22:52 GMT
+      x-cache:
+      - CONFIG_NOCACHE
+      x-microsoft-skype-chain-id:
+      - 8d38c7cd-df35-4fc7-9d0d-5fbe42fd826e
     status:
-      code: 404
-      message: Not Found
+      code: 400
+      message: Bad Request
 version: 1
