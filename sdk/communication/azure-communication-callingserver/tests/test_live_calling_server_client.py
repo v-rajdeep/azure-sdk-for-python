@@ -46,9 +46,9 @@ class ServerCallTest(CommunicationTestCase):
             self.recording_processors.extend([
                 BodyReplacerProcessor(keys=["alternateCallerId", "targets", "source", "callbackUri"])])
         else:
-            # self.to_phone_number = os.getenv("AZURE_PHONE_NUMBER")
-            # self.from_phone_number = os.getenv("ALTERNATE_CALLERID")
-            # self.participant_id = os.getenv("PARTICIPENT_ID") # use communication identifier
+            self.to_phone_number = os.getenv("AZURE_PHONE_NUMBER")
+            self.from_phone_number = os.getenv("ALTERNATE_CALLERID")
+            self.participant_id = os.getenv("PARTICIPENT_ID") # use communication identifier
             self.recording_processors.extend([
                 BodyReplacerProcessor(keys=["alternateCallerId", "targets", "source", "callbackUri"]),
                 ResponseReplacerProcessor(keys=[self._resource_name])])
