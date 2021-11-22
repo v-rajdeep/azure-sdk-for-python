@@ -72,6 +72,14 @@ class ServerCallTest(CommunicationTestCase):
         # create GroupCalls
         group_id = CallingServerLiveTestUtils.get_group_id("test_join_play_cancel_hangup_scenario")
 
+        call_connections = CallingServerLiveTestUtils.create_group_calls(
+            self.callingserver_client,
+            group_id,
+            self.from_user,
+            self.to_user,
+            CONST.CALLBACK_URI
+            )
+
         try:
             # Play Audio
             CallingServerLiveTestUtils.sleep_if_in_live_mode()
@@ -101,8 +109,16 @@ class ServerCallTest(CommunicationTestCase):
     def test_add_participant_using_calling_server_client(self):
         # create GroupCalls
         group_id = CallingServerLiveTestUtils.get_group_id("test_create_join_hangup_scenario")
-
-        call_locator = ServerCallLocator('aHR0cHM6Ly9jb252LWpwd2UtMDguY29udi5za3lwZS5jb206NDQzL2NvbnYvbjBSc2FTemZLRXlrU2RoNVU1ampoQT9pPTE5JmU9NjM3NzIyNjE0OTc5OTUwOTgx')
+        
+        call_locator = GroupCallLocator(group_id)
+       
+        call_connections = CallingServerLiveTestUtils.create_group_calls(
+            self.callingserver_client,
+            group_id,
+            self.from_user,
+            self.to_user,
+            CONST.CALLBACK_URI
+            )
 
         try:
             CallingServerLiveTestUtils.sleep_if_in_live_mode()
@@ -122,13 +138,13 @@ class ServerCallTest(CommunicationTestCase):
 
         except Exception as ex:
             print(str(ex))
+            raise ex
+        finally:
+            CallingServerLiveTestUtils.clean_up_connections(call_connections)
 
     def test_add_participant_using_get_call_connection(self):
         # create GroupCalls
         group_id = CallingServerLiveTestUtils.get_group_id("test_create_join_hangup_scenario")
-        self.recording_processors.extend([
-        RequestReplacerProcessor(keys=group_id,
-            replacement=CallingServerLiveTestUtils.get_playback_group_id("test_create_join_hangup_scenario"))])
 
         call_connections = CallingServerLiveTestUtils.create_group_calls(
             self.callingserver_client,
@@ -161,7 +177,7 @@ class ServerCallTest(CommunicationTestCase):
 
             CallingServerLiveTestUtils.sleep_if_in_live_mode()
 
-            # resume_participant_meeting_audio not working
+            # resume_participant_meeting_audio not working, pending/waiting for for hold_participant_meeting_audio
             # resume_participant_meeting_audio_result= self.callingserver_client.resume_participant_meeting_audio(
             #     call_locator= GroupCallLocator(group_id),
             #     participant=participant
@@ -184,6 +200,14 @@ class ServerCallTest(CommunicationTestCase):
     def test_play_audio_to_participant(self):
         # create GroupCalls
         group_id = CallingServerLiveTestUtils.get_group_id("test_create_add_remove_hangup_scenario")
+
+        call_connections = CallingServerLiveTestUtils.create_group_calls(
+            self.callingserver_client,
+            group_id,
+            self.from_user,
+            self.to_user,
+            CONST.CALLBACK_URI
+            )
 
         try:
             participant = CommunicationUserIdentifier(id=self.participant_id)
@@ -238,7 +262,7 @@ class ServerCallTest(CommunicationTestCase):
 
             add_participant_response = call_connection.add_participant(participant=participant,alternate_caller_id=alternate_caller_id, operation_context=operation_context)
             CallingServerLiveTestUtils.validate_add_participant(add_participant_response)
-
+        
             # answer_call not working
             # self.callingserver_client.answer_call(incoming_call_context="26fda345-3b5a-4159-b86b-260decaef2ac", callback_uri=CONST.AppCallbackUrl, 
             # requested_media_types=[CallMediaType.AUDIO], requested_call_events=[CallingEventSubscriptionType.PARTICIPANTS_UPDATED])
